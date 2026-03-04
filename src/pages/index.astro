@@ -804,7 +804,7 @@ const sidePosts = blogPosts
     justify-content: center;
     width: 100%;
     max-width: 42rem;
-    aspect-ratio: 1 / 1.15;
+    aspect-ratio: 1 / 1;
   }
 
   .avatar-img {
@@ -814,10 +814,24 @@ const sidePosts = blogPosts
     height: 100%;
     object-fit: contain;
     object-position: center;
-    background: var(--bg2);
-    border: 1px solid var(--border2);
-    border-radius: 2.4rem;
-    box-shadow: 0 4rem 8rem rgb(0 0 0 / 50%);
+    background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%);
+    border: 2px solid var(--border2);
+    border-radius: 50%;
+    box-shadow:
+      0 0 2rem rgb(59 130 246 / 40%),
+      0 1rem 4rem rgb(59 130 246 / 20%),
+      0 4rem 12rem rgb(0 0 0 / 60%);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .avatar-img:hover {
+    box-shadow:
+      0 0 3rem rgb(59 130 246 / 50%),
+      0 1.5rem 5rem rgb(59 130 246 / 25%),
+      0 5rem 15rem rgb(0 0 0 / 70%);
+    transform: translateY(-0.5rem);
   }
 
   .avatar-ring {
@@ -826,33 +840,50 @@ const sidePosts = blogPosts
     z-index: 1;
     background: linear-gradient(
         135deg,
-        rgb(59 130 246 / 35%),
-        rgb(96 165 250 / 10%),
-        transparent 60%
+        rgb(59 130 246 / 45%),
+        rgb(96 165 250 / 20%),
+        rgb(59 130 246 / 15%) 60%,
+        transparent 100%
       )
       border-box;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 3.2rem;
     mask:
       linear-gradient(#fff 0 0) padding-box,
       linear-gradient(#fff 0 0);
     mask-composite: exclude;
+    animation: ring-pulse 3s ease-in-out infinite;
   }
 
   .avatar-glow {
     position: absolute;
-    bottom: -4rem;
+    bottom: 2rem;
     left: 50%;
     z-index: 0;
-    width: 28rem;
-    height: 10rem;
+    width: 22rem;
+    height: 22rem;
     background: radial-gradient(
-      ellipse,
-      rgb(59 130 246 / 25%) 0%,
+      circle,
+      rgb(59 130 246 / 40%) 0%,
+      rgb(59 130 246 / 20%) 35%,
       transparent 70%
     );
-    filter: blur(2rem);
+    opacity: 0.9;
+    filter: blur(3.2rem);
     transform: translateX(-50%);
+  }
+
+  @keyframes ring-pulse {
+    0%,
+    100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
   }
 
   /*********************************  */
