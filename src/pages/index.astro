@@ -570,11 +570,8 @@ const sidePosts = blogPosts
 </BaseLayout>
 
 <style>
-  /*********************************  */
-
   /****** HERO ********/
 
-  /*********************************  */
   .hero {
     position: relative;
     display: flex;
@@ -785,11 +782,8 @@ const sidePosts = blogPosts
     letter-spacing: 0.1em;
   }
 
-  /*********************************  */
-
   /****** AVATAR ********/
 
-  /*********************************  */
   .hero-visual {
     position: relative;
     display: flex;
@@ -886,11 +880,8 @@ const sidePosts = blogPosts
     }
   }
 
-  /*********************************  */
-
   /****** WRAPPERS ********/
 
-  /*********************************  */
   section {
     padding: 10rem clamp(2.4rem, 5vw, 8rem);
   }
@@ -909,11 +900,8 @@ const sidePosts = blogPosts
     background: var(--bg2);
   }
 
-  /*********************************  */
-
   /****** TIMELINE ********/
 
-  /*********************************  */
   .tl-wrap {
     display: grid;
     grid-template-columns: 20rem 1fr;
@@ -1082,11 +1070,8 @@ const sidePosts = blogPosts
     color: var(--amber);
   }
 
-  /*********************************  */
-
   /****** STACK ********/
 
-  /*********************************  */
   .stack-universe {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1302,11 +1287,8 @@ const sidePosts = blogPosts
     border-radius: 100px;
   }
 
-  /*********************************  */
-
   /****** PROJECTS ********/
 
-  /*********************************  */
   .projects {
     background: var(--bg2);
   }
@@ -1456,11 +1438,7 @@ const sidePosts = blogPosts
     }
   }
 
-  /*********************************  */
-
   /****** CARD BLOG ********/
-
-  /*********************************  */
   .blog-grid {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -1473,11 +1451,7 @@ const sidePosts = blogPosts
     gap: 2.4rem;
   }
 
-  /*********************************  */
-
   /****** RESPONSIVE ********/
-
-  /*********************************  */
   @media (width <= 900px) {
     .hero-content {
       grid-template-columns: 1fr;
@@ -1525,7 +1499,6 @@ const sidePosts = blogPosts
 </style>
 
 <script>
-  // Navigation observer
   const links = document.querySelectorAll(".nav-links a");
   const observer = new IntersectionObserver(
     (entries) => {
