@@ -1,8 +1,9 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import icon from "astro-icon";
-import mdx from "@astrojs/mdx";
 import keystatic from "@keystatic/astro";
+import react from "@astrojs/react";
+import mdx from "@astrojs/mdx";
 
 const isDevMode = import.meta.env.DEV;
 
@@ -16,7 +17,6 @@ export default defineConfig({
         "simple-icons": ["*"],
       },
     }),
-    mdx(),
-    ...(isDevMode ? [keystatic()] : []),
+    ...(isDevMode ? [keystatic(), react(), mdx()] : []),
   ],
 });
