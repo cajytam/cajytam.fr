@@ -20,6 +20,7 @@
     "astro-icon": "^1.1.5"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.7",
     "@astrojs/mdx": "^4.3.13",
     "@astrojs/react": "^4.4.2",
     "@keystatic/astro": "^5.0.6",
@@ -33,7 +34,8 @@
     "react-dom": "^19.2.4",
     "stylelint": "^17.4.0",
     "stylelint-config-recess-order": "^7.6.1",
-    "stylelint-config-standard": "^40.0.0"
+    "stylelint-config-standard": "^40.0.0",
+    "typescript": "^5.9.3"
   },
   "lint-staged": {
     "*.{css,astro}": [
