@@ -19,48 +19,50 @@ const rest = posts.filter((p) => !p.data.featured);
   <Nav currentPath="/blog" />
 
   <main class="blog-page">
-    <header class="blog-header">
-      <div class="section-tag">Ecrits</div>
-      <h1 class="section-title">Le <em>blog</em></h1>
-      <p class="section-sub">
-        Je partage ici mes expériences, mes projets et mes réflexions autour du
-        développement web et des technologies que j’explore au quotidien.
-      </p>
-    </header>
+    <div class="blog-wrapper">
+      <header class="blog-header">
+        <div class="section-tag">Ecrits</div>
+        <h1 class="section-title">Le <em>blog</em></h1>
+        <p class="section-sub">
+          Je partage ici mes expériences, mes projets et mes réflexions autour
+          du développement web et des technologies que j’explore au quotidien.
+        </p>
+      </header>
 
-    {
-      featured.length > 0 && (
-        <section class="blog-featured">
-          <div class="blog-featured-label">A la une</div>
-          <div class="blog-grid-featured">
-            {featured.map((post) => (
-              <BlogCard slug={post.slug} size="lg" {...post.data} />
-            ))}
+      {
+        featured.length > 0 && (
+          <section class="blog-featured">
+            <div class="blog-featured-label">A la une</div>
+            <div class="blog-grid-featured">
+              {featured.map((post) => (
+                <BlogCard slug={post.slug} size="lg" {...post.data} />
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        rest.length > 0 && (
+          <section class="blog-all">
+            <div class="blog-featured-label">Tous les articles</div>
+            <div class="blog-grid-all">
+              {rest.map((post) => (
+                <BlogCard slug={post.slug} {...post.data} />
+              ))}
+            </div>
+          </section>
+        )
+      }
+
+      {
+        posts.length === 0 && (
+          <div class="blog-empty">
+            <p>Aucun article pour l'instant. Revenez bientot !</p>
           </div>
-        </section>
-      )
-    }
-
-    {
-      rest.length > 0 && (
-        <section class="blog-all">
-          <div class="blog-featured-label">Tous les articles</div>
-          <div class="blog-grid-all">
-            {rest.map((post) => (
-              <BlogCard slug={post.slug} {...post.data} />
-            ))}
-          </div>
-        </section>
-      )
-    }
-
-    {
-      posts.length === 0 && (
-        <div class="blog-empty">
-          <p>Aucun article pour l'instant. Revenez bientot !</p>
-        </div>
-      )
-    }
+        )
+      }
+    </div>
   </main>
 </BaseLayout>
 
@@ -68,6 +70,12 @@ const rest = posts.filter((p) => !p.data.featured);
   .blog-page {
     min-height: 100vh;
     padding: 6rem clamp(2.4rem, 5vw, 8rem) 12rem;
+  }
+
+  .blog-wrapper {
+    width: 100%;
+    max-width: 144rem;
+    margin: 0 auto;
   }
 
   .blog-header {
