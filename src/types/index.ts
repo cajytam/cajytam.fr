@@ -1,4 +1,5 @@
 import type { CollectionEntry } from "astro:content";
+import type { ImageMetadata } from "astro";
 
 export interface BaseLayoutProps {
   title?: string;
@@ -23,7 +24,7 @@ export interface BlogCardProps {
   excerpt: string;
   category: BlogCategory;
   publishedAt: Date;
-  coverImage?: string;
+  coverImage?: string | ImageMetadata;
   size?: "lg" | "sm";
 }
 
@@ -33,7 +34,7 @@ export interface ArticleLayoutProps {
   excerpt: string;
   category: BlogCategory;
   tags: string[];
-  coverImage?: string;
+  coverImage?: string | ImageMetadata;
 }
 
 export interface CardProps {

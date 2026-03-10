@@ -44,7 +44,10 @@ const dateStr = publishedAt.toLocaleDateString("fr-FR", {
       {
         coverImage && (
           <div class="article-cover">
-            <img src={coverImage} alt={title} />
+            <img
+              src={typeof coverImage === "string" ? coverImage : coverImage.src}
+              alt={title}
+            />
           </div>
         )
       }

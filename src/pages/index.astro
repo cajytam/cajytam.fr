@@ -10,6 +10,16 @@ import { Icon } from "astro-icon/components";
 import apiPlatformIcon from "../assets/icons/api-platform.svg";
 import cicdIcon from "../assets/icons/cicd.svg";
 
+type ProjectCard = {
+  title: string;
+  description: string;
+  tags: string[];
+  image?: string;
+  type: string;
+  github?: string;
+  demo?: string;
+};
+
 const blogPosts = (await getCollection("blog")).sort(
   (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
 );
@@ -17,6 +27,18 @@ const featuredPost = blogPosts.find((p) => p.data.featured) ?? blogPosts[0];
 const sidePosts = blogPosts
   .filter((p) => p.slug !== featuredPost?.slug)
   .slice(0, 2);
+
+const projects: ProjectCard[] = (await getCollection("projects"))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .map((project) => ({
+    title: project.data.title,
+    description: project.data.description,
+    tags: project.data.tags,
+    image: project.data.coverImage?.src,
+    type: project.data.featured ? "Projet phare" : "Projet",
+    github: project.data.githubUrl,
+    demo: project.data.url,
+  }));
 ---
 
 <BaseLayout>
@@ -473,10 +495,14 @@ const sidePosts = blogPosts
 
         <div class="projects-grid">
           {
-            [].map((project) => (
+            projects.map((project) => (
               <div class="project-card">
                 <div class="project-image">
-                  <img src={project.image} alt={project.title} />
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} />
+                  ) : (
+                    <div class="project-image-placeholder">🚀</div>
+                  )}
                   <span class="project-type">{project.type}</span>
                 </div>
                 <div class="project-content">
@@ -489,15 +515,17 @@ const sidePosts = blogPosts
                   </div>
                 </div>
                 <div class="project-footer">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener"
-                    class="project-link github-link"
-                    aria-label="GitHub"
-                  >
-                    <Icon name="simple-icons:github" class="project-icon" />
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener"
+                      class="project-link github-link"
+                      aria-label="GitHub"
+                    >
+                      <Icon name="simple-icons:github" class="project-icon" />
+                    </a>
+                  )}
                   {project.demo && (
                     <a
                       href={project.demo}
@@ -1290,7 +1318,18 @@ const sidePosts = blogPosts
   .project-image img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease;
+  }
+
+  .project-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 4rem;
+    color: var(--text2);
   }
 
   .project-card:hover .project-image img {

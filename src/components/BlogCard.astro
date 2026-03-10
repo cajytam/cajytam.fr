@@ -28,7 +28,10 @@ const dateStr = publishedAt.toLocaleDateString("fr-FR", {
   <div class:list={["blog-img", size === "sm" && "blog-img--sm"]}>
     {
       coverImage ? (
-        <img src={coverImage} alt={title} />
+        <img
+          src={typeof coverImage === "string" ? coverImage : coverImage.src}
+          alt={title}
+        />
       ) : (
         <div class="placeholder">📄</div>
       )
