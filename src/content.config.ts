@@ -6,10 +6,11 @@ const blog = defineCollection({
     z.object({
       title: z.string(),
       excerpt: z.string(),
-      publishedAt: z.string(),
+      publishedAt: z.coerce.date(),
       category: z.enum(["journey", "autre"]),
       tags: z.array(z.string()).default([]),
       coverImage: image().optional(),
+      featured: z.boolean().default(false),
     }),
 });
 
@@ -23,7 +24,7 @@ const projects = defineCollection({
       coverImage: image().optional(),
       url: z.string().url().optional(),
       githubUrl: z.string().url().optional(),
-      publishedAt: z.string(),
+      publishedAt: z.coerce.date(),
       featured: z.boolean().default(false),
     }),
 });
