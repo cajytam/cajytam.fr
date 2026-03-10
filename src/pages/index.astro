@@ -11,12 +11,7 @@ import apiPlatformIcon from "../assets/icons/api-platform.svg";
 import cicdIcon from "../assets/icons/cicd.svg";
 
 const blogPosts = (await getCollection("blog")).sort(
-  (
-    a: { data: { publishedAt: number } },
-    b: {
-      data: { publishedAt: number };
-    },
-  ) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
 );
 const featuredPost = blogPosts.find((p) => p.data.featured) ?? blogPosts[0];
 const sidePosts = blogPosts
