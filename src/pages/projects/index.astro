@@ -31,7 +31,7 @@ const projects = (await getCollection("projects")).sort(
           {
             projects.map((project) => (
               <Card
-                href={`/projects/${project.slug}`}
+                href={`/projects/${project.id}`}
                 title={project.data.title}
                 description={project.data.description}
                 tags={project.data.tags}

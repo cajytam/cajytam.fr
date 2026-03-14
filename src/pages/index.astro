@@ -25,7 +25,7 @@ const blogPosts = (await getCollection("blog")).sort(
 );
 const featuredPost = blogPosts.find((p) => p.data.featured) ?? blogPosts[0];
 const sidePosts = blogPosts
-  .filter((p) => p.slug !== featuredPost?.slug)
+  .filter((p) => p.id !== featuredPost?.id)
   .slice(0, 2);
 
 const projects: ProjectCard[] = (await getCollection("projects"))
@@ -562,14 +562,14 @@ const projects: ProjectCard[] = (await getCollection("projects"))
             <div class="blog-grid">
               {featuredPost && (
                 <BlogCard
-                  slug={featuredPost.slug}
+                  slug={featuredPost.id}
                   size="lg"
                   {...featuredPost.data}
                 />
               )}
               <div class="blog-right">
                 {sidePosts.map((post) => (
-                  <BlogCard slug={post.slug} size="sm" {...post.data} />
+                  <BlogCard slug={post.id} size="sm" {...post.data} />
                 ))}
               </div>
             </div>

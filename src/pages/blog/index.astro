@@ -35,7 +35,7 @@ const rest = posts.filter((p) => !p.data.featured);
             <div class="blog-featured-label">A la une</div>
             <div class="blog-grid-featured">
               {featured.map((post) => (
-                <BlogCard slug={post.slug} size="lg" {...post.data} />
+                <BlogCard slug={post.id} size="lg" {...post.data} />
               ))}
             </div>
           </section>
@@ -48,7 +48,7 @@ const rest = posts.filter((p) => !p.data.featured);
             <div class="blog-featured-label">Tous les articles</div>
             <div class="blog-grid-all">
               {rest.map((post) => (
-                <BlogCard slug={post.slug} {...post.data} />
+                <BlogCard slug={post.id} {...post.data} />
               ))}
             </div>
           </section>
