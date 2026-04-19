@@ -7,13 +7,28 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
+    "@fontsource/dm-serif-display": "^5.2.8",
     "@nuxt/content": "^3.13.0",
+    "@tailwindcss/vite": "^4.2.2",
+    "@vueuse/core": "^14.2.1",
+    "@vueuse/motion": "^3.0.3",
     "better-sqlite3": "^12.9.0",
+    "lucide-vue-next": "^1.0.0",
     "nuxt": "^4.4.2",
+    "prismjs": "^1.30.0",
+    "tailwindcss": "^4.2.2",
     "vue": "^3.5.32",
     "vue-router": "^5.0.4"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "@types/prismjs": "^1.26.6",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   }
 }
