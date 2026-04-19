@@ -5,4 +5,9 @@ export default defineNuxtConfig({
   experimental: {
     serverAppConfig: false,
   },
+  vite: {
+    optimizeDeps: {
+      include: ["@vue/devtools-core", "@vue/devtools-kit"],
+    },
+  },
 });
