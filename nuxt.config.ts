@@ -19,6 +19,6 @@ export default defineNuxtConfig({
       include: ['@vue/devtools-core', '@vue/devtools-kit'],
     },
   },
-  modules: ['@nuxt/content', '@vueuse/motion/nuxt'],
+  modules: ['@nuxt/content', '@vueuse/motion/nuxt', 'nuxt-studio'],
   css: ['~/assets/css/main.css'],
 })
