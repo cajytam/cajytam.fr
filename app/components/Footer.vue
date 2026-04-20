@@ -6,7 +6,7 @@ import { Github, Linkedin } from 'lucide-vue-next'
   <footer id="contact" class="border-t border-zinc-200 px-6 py-12 lg:px-12 dark:border-zinc-800">
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col items-center justify-between gap-6 lg:flex-row">
-        <p class="text-sm text-zinc-500 dark:text-zinc-500">
+        <p class="text-sm text-zinc-600 dark:text-zinc-400">
           © 2026 Cédric Matyja. Tous droits réservés.
         </p>
 
@@ -49,7 +49,7 @@ import { Github, Linkedin } from 'lucide-vue-next'
           </a>
         </div>
 
-        <p class="text-sm text-zinc-500 dark:text-zinc-500">Conçu et développé avec passion</p>
+        <p class="text-sm text-zinc-600 dark:text-zinc-400">Conçu et développé avec passion</p>
       </div>
     </div>
   </footer>

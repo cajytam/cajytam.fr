@@ -32,19 +32,19 @@
         <div class="grid grid-cols-2 gap-8">
           <div>
             <div class="mb-2 text-5xl font-bold text-indigo-500 dark:text-indigo-400">5+</div>
-            <div class="text-zinc-500 dark:text-zinc-500">Années en dev web</div>
+            <div class="text-zinc-600 dark:text-zinc-400">Années en dev web</div>
           </div>
           <div>
             <div class="mb-2 text-5xl font-bold text-indigo-500 dark:text-indigo-400">6</div>
-            <div class="text-zinc-500 dark:text-zinc-500">Expériences pro</div>
+            <div class="text-zinc-600 dark:text-zinc-400">Expériences pro</div>
           </div>
           <div>
             <div class="mb-2 text-5xl font-bold text-indigo-500 dark:text-indigo-400">12+</div>
-            <div class="text-zinc-500 dark:text-zinc-500">Ans de transformation</div>
+            <div class="text-zinc-600 dark:text-zinc-400">Ans de transformation</div>
           </div>
           <div>
             <div class="mb-2 text-5xl font-bold text-indigo-500 dark:text-indigo-400">16</div>
-            <div class="text-zinc-500 dark:text-zinc-500">Ans d'expérience totale</div>
+            <div class="text-zinc-600 dark:text-zinc-400">Ans d'expérience totale</div>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ import { PenLine } from 'lucide-vue-next'
         <h3 class="mb-2 text-xl font-semibold text-zinc-800 dark:text-zinc-200">
           Aucun article pour l'instant
         </h3>
-        <p class="max-w-sm text-zinc-500 dark:text-zinc-500">
+        <p class="max-w-sm text-zinc-600 dark:text-zinc-400">
           Des articles techniques arrivent bientôt. Revenez prochainement !
         </p>
       </div>
