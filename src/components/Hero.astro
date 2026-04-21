@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import portrait from "../assets/portrait.png";
 ---
 
 <section
@@ -7,7 +9,7 @@ import { Icon } from "astro-icon/components";
   class="relative flex min-h-screen items-center justify-center overflow-hidden py-24"
 >
   <div
-    class="absolute inset-0 bg-gradient-to-br from-indigo-100 via-zinc-50 to-zinc-50 dark:from-indigo-950 dark:via-zinc-950 dark:to-zinc-950"
+    class="absolute inset-0 bg-linear-to-br from-indigo-100 via-zinc-50 to-zinc-50 dark:from-indigo-950 dark:via-zinc-950 dark:to-zinc-950"
   >
   </div>
 
@@ -22,26 +24,29 @@ import { Icon } from "astro-icon/components";
   <div class="relative z-10 mx-auto w-full max-w-7xl px-6 lg:px-12">
     <div class="grid items-center gap-30 lg:grid-cols-2">
       <div
-        class="relative order-1 flex justify-center lg:order-none lg:justify-start"
+        class="relative order-1 flex justify-center lg:order-0 lg:justify-start"
       >
         <div class="relative">
           <div
-            class="absolute inset-0 scale-110 rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 opacity-20 blur-3xl dark:opacity-30"
+            class="absolute inset-0 scale-110 rounded-full bg-linear-to-br from-indigo-600 to-violet-600 opacity-20 blur-3xl dark:opacity-30"
           >
           </div>
           <div
-            class="relative h-[22rem] w-[22rem] sm:h-[26rem] sm:w-[26rem] lg:h-[32rem] lg:w-[32rem] xl:h-[36rem] xl:w-[36rem]"
+            class="relative h-88 w-88 sm:h-104 sm:w-104 lg:h-128 lg:w-lg xl:h-144 xl:w-lg"
           >
-            <img
-              src="/portrait.png"
+            <Image
+              src={portrait}
               alt="Cédric Matyja"
+              widths={[352, 416, 512, 576]}
+              sizes="(min-width: 1280px) 36rem, (min-width: 1024px) 32rem, (min-width: 640px) 26rem, 22rem"
+              loading="eager"
               class="relative z-10 h-full w-full object-contain"
             />
           </div>
         </div>
       </div>
 
-      <div class="order-2 lg:order-none">
+      <div class="order-2 lg:order-0">
         <div
           class="mb-4 font-medium tracking-wider text-indigo-500 dark:text-indigo-400"
         >
@@ -53,7 +58,7 @@ import { Icon } from "astro-icon/components";
         >
           Cédric<br />
           <span
-            class="bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent"
+            class="bg-linear-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent"
           >
             Matyja
           </span>
